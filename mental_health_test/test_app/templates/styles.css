@@ -1,0 +1,74 @@
+/* Custom CSS for homepage with updated color scheme */
+body {
+    background-color: #DBE9EE;
+    color: #4F6D7A;
+}
+
+.navbar {
+    background-color: #166088;
+}
+
+.navbar-brand {
+    color: #FFFFFF !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #F5F5F5 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #C0D6DF !important;
+}
+
+.homepage-banner {
+    background-color: #4A6FA5;
+    color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: #166088;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+.btn-primary:hover {
+    background-color: #4A6FA5;
+}
+
+.how-it-works h2, .overview h2 {
+    color: #4F6D7A;
+    font-weight: bold;
+}
+
+.how-it-works .border {
+    background-color: #C0D6DF;
+    color: #166088;
+    transition: transform 0.3s ease;
+}
+
+.how-it-works .border:hover {
+    transform: scale(1.05);
+    background-color: #4A6FA5;
+    color: #FFFFFF;
+}
+
+footer {
+    background-color: #166088;
+    color: #FFFFFF;
+    border-top: 1px solid #4A6FA5;
+}
+
+footer a {
+    color: #DBE9EE;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #4A6FA5;
+}

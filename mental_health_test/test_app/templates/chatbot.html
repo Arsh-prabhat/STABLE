@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("{% static 'images/backcb.jpg' %}");
+
+            font-family: Arial, sans-serif;
+        }
+        .chat-container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+        .form-control {
+            margin-bottom: 15px;
+        }
+        .response {
+            margin-top: 15px;
+            background-color: #c0d6df;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .btn-custom {
+            background-color: #4a6fa5;
+            color: #ffffff;
+        }
+        .navbar {
+      background-color: #166088;
+  }
+  
+  .navbar-brand {
+      color: #FFFFFF !important;
+      font-weight: bold;
+  }
+  
+  .nav-link {
+      color: #F5F5F5 !important;
+      font-weight: 500;
+  }
+  
+  .nav-link:hover {
+      color: #C0D6DF !important;
+  }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/stable.png' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                STABLE
+              </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profile
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Details</a></li>
+                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/wellness">Wellness</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <iframe
+src="https://www.chatbase.co/chatbot-iframe/F_jLx0WZ-Vb-tIE-svpwU"
+width="100%"
+style="height: 100%; min-height: 700px"
+frameborder="0"
+></iframe>
+    <!-- <div class="chat-container text-center">
+        <h2 class="text-center mb-4">Mental Health Chatbot</h2>
+        <form id="chatForm" method="POST" action="{% url 'chatbot' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" name="user_input" class="form-control" placeholder="Ask your question here" required>
+            </div>
+            <button type="submit" class="btn btn-custom w-100">Send</button>
+        </form>
+        <div id="response" class="response" style="display:none;"></div>
+    </div>
+
+    <script>
+        document.getElementById('chatForm').onsubmit = async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+            const result = await response.json();
+            document.getElementById('response').style.display = 'block';
+            document.getElementById('response').innerHTML = `<p><strong>Bot:</strong> ${result.response}</p>`;
+        } 
+    </script>-->
+    <script>
+        window.embeddedChatbotConfig = {
+        chatbotId: "F_jLx0WZ-Vb-tIE-svpwU",
+        domain: "www.chatbase.co"
+        }
+        </script>
+        <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="F_jLx0WZ-Vb-tIE-svpwU"
+        domain="www.chatbase.co"
+        defer>
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

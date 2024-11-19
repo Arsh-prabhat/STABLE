@@ -1,0 +1,334 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STABLE - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</head>
+<style>/* Custom CSS for homepage with updated color scheme */
+  body {
+      background-color: #DBE9EE;
+      color: #4F6D7A;
+  }
+  
+  .navbar {
+      background-color: #166088;
+  }
+  
+  .navbar-brand {
+      color: #FFFFFF !important;
+      font-weight: bold;
+  }
+  
+  .nav-link {
+      color: #F5F5F5 !important;
+      font-weight: 500;
+  }
+  
+  .nav-link:hover {
+      color: #C0D6DF !important;
+  }
+  
+  .homepage-banner {
+      background-image: url("{% static 'images/hero.jpg' %}");
+      color: #FFFFFF;
+      border-radius: 8px;
+      height: 399px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-primary {
+      background-color: #166088;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+  }
+  
+  .btn-primary:hover {
+      background-color: #4A6FA5;
+  }
+  
+  .how-it-works h2, .overview h2 {
+      color: #4F6D7A;
+      font-weight: bold;
+  }
+  
+  .how-it-works .border {
+      background-color: #C0D6DF;
+      color: #166088;
+      transition: transform 0.3s ease;
+  }
+  
+  .how-it-works .border:hover {
+      transform: scale(1.05);
+      background-color: #4A6FA5;
+      color: #FFFFFF;
+  }
+  
+  footer {
+      background-color: #166088;
+      color: #FFFFFF;
+      border-top: 1px solid #4A6FA5;
+  }
+  
+  footer a {
+      color: #DBE9EE;
+      text-decoration: none;
+      font-weight: bold;
+  }
+  
+  footer a:hover {
+      color: #4A6FA5;
+  }
+  .navbar, footer {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.carousel-caption {
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.homepage-banner h1, .homepage-banner p {
+  animation: bounceIn 1.5s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.card {
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-button:hover {
+    background-color: #4F6D7A;
+}
+
+
+
+  </style>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/stable.png' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                STABLE
+              </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/wellness">Wellness</a>
+              </li>
+              <li class="nav-item dropdown">
+                        {% if user.is_authenticated %}
+                            <!-- Profile Icon for Logged-in User -->
+                            <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{% static 'images/download.png' %}" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                <li><a class="dropdown-item" href="#">Details</a></li>
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                            </ul>
+                        {% else %}
+                            <!-- Login Link for Guests -->
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        {% endif %}
+                    </li>
+          </div>
+        </div>
+      </nav>
+      <!-- hero section -->
+      <div class="homepage-banner text-center p-5 mb-4">
+        <br><br><br>
+        <h1 class="display-4">Welcome to STABLE</h1>
+        <p class="lead">Your Personal Mental Health Check-In</p>
+        <a href="/surveyhome" class="btn btn-primary">Start the Survey</a>
+    </div>
+        
+    </div>
+    <div class="col-10 mx-auto">    
+        <div id="carouselExampleCaptions" class=" carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images\gabriel-E-b_VNmtGJY-unsplash.jpg' %}" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Its OK to not be OK</h5>
+              <p>Everybody is going through something in their lives</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images\kelly-sikkema-XX2WTbLr3r8-unsplash.jpg'%}" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Its OK to ask for help</h5>
+              <p>People think that they will be judged if they will ask for help.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images\marcel-strauss-fzqxoFJytiE-unsplash.jpg'%}" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Mental health is Important!</h5>
+              <p>Mental is as important as physical health, Take care of it</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div><br><br>
+      
+       <!-- Overview Section -->
+     <section class="overview container mb-5">
+      <h2 class="text-center mb-4">About mental health</h2>
+      <p class="text-center">STABLE is a mental health self-check tool that helps you understand your current emotional well-being through a quick series of questions.</p>
+  </section> 
+  <!-- cards -->
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card"  data-aos="fade-up">
+            <img src="{% static 'images\card1.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Understanding Mental Health</h5>
+              <p class="card-text">Mental health is a critical aspect of overall well-being, influencing how individuals think, feel, and behave in daily life.</p>
+              <a href="/understandingMH" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card"  data-aos="fade-up">
+            <img src="{% static 'images\crousel2.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Common Mental Health Disorders</h5>
+              <p class="card-text">Mental health disorders are conditions affecting mood, thinking, and behavior, including depression. They impact daily functioning and well-being.</p>
+              <a href="/MHdisorders" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card"  data-aos="fade-up">
+            <img src="{% static 'images\crousel1.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Factors Affecting Mental Health</h5>
+              <p class="card-text">Factors affecting mental health include genetics, environment, trauma, lifestyle, stress, relationships, and social support.</p>
+              <a href="/factorsaffMH" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card"  data-aos="fade-up">
+            <img src="{% static 'images\crousel3.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">The Importance of Mental Health Awareness</h5>
+              <p class="card-text">Despite growing awareness, mental health stigma remains a barrier to seeking help. Misconceptions about mental illness lead many to suffer in silence, fearing judgment or discrimination.</p>
+              <a href="/impMHaws" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div><br><br><hr>
+      
+   
+    <!-- Footer -->
+    <footer class=" text-center p-3">
+        <p>Contact us at <a href="mailto:support@stable.com">support@stable.com</a> | Follow us on social media</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

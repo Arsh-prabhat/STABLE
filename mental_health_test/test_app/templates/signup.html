@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Login & Signup</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="administrationpage.css">
+</head>
+<style>@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Overall page background and color scheme */
+body {
+    background-color: #DBE9EE;
+    color: #4F6D7A;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #166088;
+}
+
+.navbar-brand {
+    color: #FFFFFF !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #F5F5F5 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #C0D6DF !important;
+}
+
+footer {
+    background-color: #166088;
+    color: #FFFFFF;
+    border-top: 1px solid #4A6FA5;
+}
+
+footer a {
+    color: #DBE9EE;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #4A6FA5;
+}
+
+/* Fade-in effect for navbar and footer */
+.navbar, footer {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Styling the form containers */
+.content-section {
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-image: url("{% static 'images/Frame_1.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the form inputs */
+.form-control {
+    border-radius: 4px;
+    border: 1px solid #4F6D7A;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+/* Customize button styles for login/signup */
+.btn-primary {
+    background-color: #166088;
+    border-color: #166088;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background-color: #135B73;
+    border-color: #135B73;
+}
+
+/* Form headers and labels */
+.form-header {
+    color: #166088;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Input focus effect */
+.form-control:focus {
+    border-color: #4A6FA5;
+    box-shadow: 0 0 5px rgba(74, 111, 165, 0.5);
+}
+
+/* Adjust form alignment */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-check-label {
+    color: #4F6D7A;
+}
+
+/* Custom styles for the login and signup forms */
+.login-form, .signup-form {
+    padding: 30px;
+    border-radius: 8px;
+    background-image: url("{% static 'images/Frame_1.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000000; /* Changed to black */
+    position: relative;
+}
+
+.login-form::before, .signup-form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    border-radius: 8px;
+}
+
+.login-form, .signup-form {
+    position: relative;
+    z-index: 1;
+}
+
+/* Adjust button alignment in the forms */
+.form-button-container {
+    text-align: center;
+}
+
+/* Add space between the form fields and button */
+.form-button-container button {
+    width: 100%;
+}
+
+/* Styling for links inside forms (like 'Forgot password' or 'Sign Up') */
+.form-link {
+    text-align: center;
+    display: block;
+    color: #166088;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.form-link:hover {
+    color: #4A6FA5;
+}
+.container {
+    margin-top: 100px; /* Adjust value to match your navbar height */
+    margin-bottom: 100px;
+}
+
+</style>
+
+
+
+
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/stable.png' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                STABLE
+              </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profile
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Detils</a></li>
+                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="/wellness">Wellness</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class="container d-flex align-items-center justify-content-center vh-100">
+        <div class="card shadow-lg p-4" style="width: 450px;">
+            <h2 class="text-center mb-2 card-title">STABLE</h2>
+            <h6 class="text-center mb-3 card-subtitle">Your personal mental health guide</h6>
+
+            <h4>Sign Up</h4><hr>
+            <div class="tab-content mt-4" id="authTabContent">
+                <!-- Sign Up Form -->
+                <div class="tab-pane fade show active" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="Firstname" class="form-label">First Name:</label>
+                            <input type="text" name="Firstname" class="form-control"  required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Lastname" class="form-label">Last Name:</label>
+                            <input type="text" name="Lastname" class="form-control" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username:</label>
+                            <input type="text" name="username" class="form-control" placeholder="eg:arshp1001" required>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" name="email" class="form-control" placeholder="abc@xyz.com" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password:</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form><br><hr>
+                    <h6 class="text-center">have an account?<a href="/login">Login</a></h6>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class=" text-center p-3">
+        <p>Contact us at <a href="mailto:support@stable.com">support@stable.com</a> | Follow us on social media</p>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

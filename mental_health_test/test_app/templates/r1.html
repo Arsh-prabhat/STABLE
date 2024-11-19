@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STABLE - Mental Health</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #166088;
+        }
+
+        .navbar-brand {
+            color: #FFFFFF !important;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #F5F5F5 !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #C0D6DF !important;
+        }
+
+        .hero-section {
+            background-color: #C0D6DF;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #166088;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .card-title {
+            color: #166088;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/stable.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                STABLE
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/wellness">Wellness</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <!-- Profile -->
+                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/download.png" alt="Profile" class="rounded-circle" style="width: 30px; height: 30px;">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="#">Details</a></li>
+                            <li><a class="dropdown-item" href="#">Edit</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Welcome to STABLE</h1>
+        <p>Your guide to improving mental health and achieving emotional well-being.</p>
+    </div>
+
+    <!-- Content Section -->
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Improving Mental Health</h2>
+
+        <div class="row">
+            <!-- Card 1: Daily Routines -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Daily Routines</h5>
+                        <p class="card-text">
+                            Start your day with 5 minutes of deep breathing. Exercise for 30 minutes, maintain a gratitude journal, and spend time in nature.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Motivational Video -->
+            <div class="col-md-4">
+                <div class="card">
+                    <iframe class="card-img-top" width="100%" height="200" src="https://www.youtube.com/embed/ZbG9R-AFghk" title="Motivational Video" frameborder="0" allowfullscreen></iframe>
+                    <div class="card-body">
+                        <h5 class="card-title">Watch and Inspire</h5>
+                        <p class="card-text">Take a moment to watch this motivational video to uplift your spirit and boost positivity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Articles -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Helpful Articles</h5>
+                        <p class="card-text">
+                            <a href="https://www.helpguide.org/articles/depression/coping-with-depression.htm" target="_blank">Coping with Depression</a><br>
+                            <a href="https://www.verywellmind.com/what-is-self-care-5198429" target="_blank">What is Self-Care?</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- Card 4: Mindful Practices -->
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="images/mindfulness.jpg" class="card-img-top" alt="Mindfulness">
+                    <div class="card-body">
+                        <h5 class="card-title">Mindful Practices</h5>
+                        <p class="card-text">Learn mindfulness and meditation techniques to reduce stress and stay focused on the present.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Community Support -->
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="images/community.jpg" class="card-img-top" alt="Community">
+                    <div class="card-body">
+                        <h5 class="card-title">Community Support</h5>
+                        <p class="card-text">Connect with support groups and mental health communities to share your experiences and feel understood.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>STABLE &copy; 2024. Your mental health matters.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
