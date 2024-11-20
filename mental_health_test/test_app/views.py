@@ -191,7 +191,7 @@ def survey_view(request):
             answers.append(int(answer))
 
         # Calculate the score based on answers
-        score = (sum(answers) / len(answers)) * 10
+        score = (sum(answers) / (len(answers) * 5)) * 100
 
         # Determine the result based on the score
         if score <= 30:
