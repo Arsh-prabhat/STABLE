@@ -275,3 +275,6 @@ def user_details(request):
 
 def wellness(request):
     return render(request, 'wellness.html')
+
+def low(request):
+    return render(request, 'r1.html')

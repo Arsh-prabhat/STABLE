@@ -14,5 +14,6 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('chatbot/', views.chatbot_view, name='chatbot'),
     path('details/', views.user_details, name='details'),
-    path('wellness/', views.wellness , name="wellness")
+    path('wellness/', views.wellness , name="wellness"),
+    path('low/', views.low, name="low",)
     ]
