@@ -51,22 +51,22 @@ def survey_view(request):
         'option_4_value': 4,
         'option_5_value': 5
     },
-    {
-        'text': "I've made many terrible decisions in my life.",
-        'option_1_value': 5,
-        'option_2_value': 4,
-        'option_3_value': 3,
-        'option_4_value': 2,
-        'option_5_value': 1
-    },
-    {
-        'text': "I am very self-critical.",
-        'option_1_value': 5,
-        'option_2_value': 4,
-        'option_3_value': 3,
-        'option_4_value': 2,
-        'option_5_value': 1
-    },
+    # {
+    #     'text': "I've made many terrible decisions in my life.",
+    #     'option_1_value': 5,
+    #     'option_2_value': 4,
+    #     'option_3_value': 3,
+    #     'option_4_value': 2,
+    #     'option_5_value': 1
+    # },
+    # {
+    #     'text': "I am very self-critical.",
+    #     'option_1_value': 5,
+    #     'option_2_value': 4,
+    #     'option_3_value': 3,
+    #     'option_4_value': 2,
+    #     'option_5_value': 1
+    # },
     {
         'text': "I cannot get beyond long-past traumatic events or significant losses.",
         'option_1_value': 5,
@@ -83,22 +83,22 @@ def survey_view(request):
         'option_4_value': 4,
         'option_5_value': 5
     },
-    {
-        'text': "I trust that if I confide in others, they will be supportive.",
-        'option_1_value': 1,
-        'option_2_value': 2,
-        'option_3_value': 3,
-        'option_4_value': 4,
-        'option_5_value': 5
-    },
-    {
-        'text': "I engage in at least one behavior that significantly impairs my ability to function on a daily basis",
-        'option_1_value': 5,
-        'option_2_value': 4,
-        'option_3_value': 3,
-        'option_4_value': 2,
-        'option_5_value': 1
-    },
+    # {
+    #     'text': "I trust that if I confide in others, they will be supportive.",
+    #     'option_1_value': 1,
+    #     'option_2_value': 2,
+    #     'option_3_value': 3,
+    #     'option_4_value': 4,
+    #     'option_5_value': 5
+    # },
+    # {
+    #     'text': "I engage in at least one behavior that significantly impairs my ability to function on a daily basis",
+    #     'option_1_value': 5,
+    #     'option_2_value': 4,
+    #     'option_3_value': 3,
+    #     'option_4_value': 2,
+    #     'option_5_value': 1
+    # },
     {
         'text': "When I experience a strong emotion, I usually know why it's hitting me.",
         'option_1_value': 1,
@@ -107,22 +107,22 @@ def survey_view(request):
         'option_4_value': 4,
         'option_5_value': 5
     },
-    {
-        'text': "My mood is stable.",
-        'option_1_value': 1,
-        'option_2_value': 2,
-        'option_3_value': 3,
-        'option_4_value': 4,
-        'option_5_value': 5
-    },
-    {
-        'text': "I procrastinate and/or avoid dealing with important things in my life.",
-        'option_1_value': 5,
-        'option_2_value': 4,
-        'option_3_value': 3,
-        'option_4_value': 2,
-        'option_5_value': 1
-    },
+    # {
+    #     'text': "My mood is stable.",
+    #     'option_1_value': 1,
+    #     'option_2_value': 2,
+    #     'option_3_value': 3,
+    #     'option_4_value': 4,
+    #     'option_5_value': 5
+    # },
+    # {
+    #     'text': "I procrastinate and/or avoid dealing with important things in my life.",
+    #     'option_1_value': 5,
+    #     'option_2_value': 4,
+    #     'option_3_value': 3,
+    #     'option_4_value': 2,
+    #     'option_5_value': 1
+    # },
     {
         'text': "I often feel sad.",
         'option_1_value': 5,
@@ -131,14 +131,14 @@ def survey_view(request):
         'option_4_value': 2,
         'option_5_value': 1
     },
-    {
-        'text': "I have a sense of purpose in life.",
-        'option_1_value': 1,
-        'option_2_value': 2,
-        'option_3_value': 3,
-        'option_4_value': 4,
-        'option_5_value': 5
-    },
+    # {
+    #     'text': "I have a sense of purpose in life.",
+    #     'option_1_value': 1,
+    #     'option_2_value': 2,
+    #     'option_3_value': 3,
+    #     'option_4_value': 4,
+    #     'option_5_value': 5
+    # },
     {
         'text': "I often feel lonely.",
         'option_1_value': 5,
@@ -155,14 +155,14 @@ def survey_view(request):
         'option_4_value': 2,
         'option_5_value': 1
     },
-    {
-        'text': "I've noticed changes in my appetite or sleep patterns relative to when I was at my best.",
-        'option_1_value': 5,
-        'option_2_value': 4,
-        'option_3_value': 3,
-        'option_4_value': 2,
-        'option_5_value': 1
-    },
+    # {
+    #     'text': "I've noticed changes in my appetite or sleep patterns relative to when I was at my best.",
+    #     'option_1_value': 5,
+    #     'option_2_value': 4,
+    #     'option_3_value': 3,
+    #     'option_4_value': 2,
+    #     'option_5_value': 1
+    # },
     {
         'text': "I'm able to bounce back from setbacks.",
         'option_1_value': 1,
@@ -171,14 +171,14 @@ def survey_view(request):
         'option_4_value': 4,
         'option_5_value': 5
     },
-    {
-        'text': "I manage my time and my obligations; most days life feels under control.",
-        'option_1_value': 1,
-        'option_2_value': 2,
-        'option_3_value': 3,
-        'option_4_value': 4,
-        'option_5_value': 5
-    }
+    # {
+    #     'text': "I manage my time and my obligations; most days life feels under control.",
+    #     'option_1_value': 1,
+    #     'option_2_value': 2,
+    #     'option_3_value': 3,
+    #     'option_4_value': 4,
+    #     'option_5_value': 5
+    # }
 ]
 
     if request.method == 'POST':
