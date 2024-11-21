@@ -276,3 +276,6 @@ def wellness(request):
 
 def low(request):
     return render(request, 'r1.html')
+
+def mid(request):
+    return render(request, 'r2.html')

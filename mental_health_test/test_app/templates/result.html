@@ -156,7 +156,7 @@
                             <p>{{ result }}</p>
                         </div>
                         <div>
-                            <a class="btn btn-primary" href="/low">Go ahead</a>
+                            <button id="navigateButton" class="btn btn-primary">Go Ahead</button>
                         </div>
                     </div>
                 </div>
@@ -175,6 +175,20 @@
         } else {
             thumb.style.left = '0%'; // If no score is provided, set to 0%
         }
+
+        // Example score (replace this with the actual score from your logic)
+    let score = 55; // Replace with your dynamic score
+
+// Add an event listener to handle the button click
+document.getElementById("navigateButton").addEventListener("click", function () {
+    if (score > 50) {
+        // Navigate to the "mid" page
+        window.location.href = "/mid";
+    } else {
+        // Navigate to the "low" page
+        window.location.href = "/low";
+    }
+});
     </script>
             </body>
         </html>
