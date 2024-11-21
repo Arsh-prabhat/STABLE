@@ -228,8 +228,6 @@ def card4(request):
 
 def signup_view(request):
     if request.method == 'POST':
-        Firstname= request.POST['Firstname']
-        Lastname= request.POST['Lastname']
         username = request.POST['username']
         password = request.POST['password']
         email = request.POST['email']
@@ -238,7 +236,7 @@ def signup_view(request):
             messages.error(request, 'Username already exists')
             return redirect('signup')
         else:
-            user = User.objects.create_user( Firstname=Firstname, Lastname=Lastname,username=username, password=password, email=email)
+            user = User.objects.create_user(username=username, password=password, email=email)
             user.save()
             messages.success(request, 'Account created successfully')
             return redirect('login')
